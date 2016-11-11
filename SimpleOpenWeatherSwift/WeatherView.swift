@@ -13,12 +13,12 @@ class WeatherView: UIViewController, WebAPIWorkerDelegate {
 
         WebAPIWorker.sharedInstance.delegate = self
         
-        WebAPIWorker.sharedInstance.add(urlString: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&cnt=10&mode=json&APPID=57ad1e9946cd91926667c610c7200941")
+        WebAPIWorker.sharedInstance.getURLData(urlString: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&cnt=10&mode=json&APPID=57ad1e9946cd91926667c610c7200941")
      
         
     }
     
-    func updateData(data: Data) {
-        print("in there!")
+    func updateData(data: NSDictionary) {
+        print("\(data)")
     }
 }
